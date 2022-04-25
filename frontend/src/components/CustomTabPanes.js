@@ -1,8 +1,8 @@
 import { Button, Tabs } from "antd";
 import { Link } from "react-router-dom";
 import CustomTabPanesDelivery from "./CusromeTabPanesDelivery";
-import DeliveryStaff from "./DeliveryStaff";
-import OrderDetails from "./OrderDetails";
+import CustomTabPanesOrder from "./CustomTabPanesOrder";
+import TrackingOrder from "./TrackingOrder";
 
 const { TabPane } = Tabs;
 
@@ -10,7 +10,7 @@ const CustomTabPanes = () => (
   <center>
     <Tabs defaultActiveKey="1">
       <TabPane tab="Order Details" key="1">
-        <OrderDetails />
+        <CustomTabPanesOrder />
       </TabPane>
       <TabPane tab="Delivery Staff" key="2">
         <CustomTabPanesDelivery />
@@ -19,6 +19,9 @@ const CustomTabPanes = () => (
         <Link to="/report">
           <Button>Click To Generate Report</Button>
         </Link>
+      </TabPane>
+      <TabPane tab="Track Order Page" key="4">
+        <TrackingOrder />
       </TabPane>
     </Tabs>
   </center>

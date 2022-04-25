@@ -11,7 +11,7 @@ export default () => {
       await axios
         .get("http://localhost:8070/delivery/")
         .then((res) => setData(res.data)))();
-  }, []);
+  });
 
   const deleteHandler = async (id) => {
     try {
@@ -21,7 +21,6 @@ export default () => {
         placement: "top",
       });
       await axios.delete(`http://localhost:8070/delivery/delete/${id}`);
-      window.location.reload();
     } catch (error) {
       alert(error);
     }

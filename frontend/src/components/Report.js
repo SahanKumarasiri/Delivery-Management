@@ -85,7 +85,7 @@ export default class Report extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:8070/delivery/").then((response) => {
+    axios.get("http://localhost:8070/orders/").then((response) => {
       console.log(response?.data);
       this.setState({
         ReportData: response?.data,
@@ -100,10 +100,10 @@ export default class Report extends Component {
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                <TableCell align="right">Driver</TableCell>
-                <TableCell align="right">Vehicle</TableCell>
-                <TableCell align="right">Driver Id</TableCell>
-                <TableCell align="right">Phone Number</TableCell>
+                <TableCell align="right">Order ID</TableCell>
+                <TableCell align="right">Name</TableCell>
+                <TableCell align="right">Address</TableCell>
+                <TableCell align="right">Status</TableCell>
                 <TableCell align="right">Vehicle Number</TableCell>
               </TableRow>
             </TableHead>
@@ -111,10 +111,10 @@ export default class Report extends Component {
               {this.state?.ReportData?.map((p, index) => {
                 return (
                   <TableRow key={index}>
-                    <TableCell align="right">{p.driver}</TableCell>
-                    <TableCell align="right">{p.vehicle}</TableCell>
-                    <TableCell align="right">{p.driverId}</TableCell>
-                    <TableCell align="right">{p.phoneNo}</TableCell>
+                    <TableCell align="right">{p.oId}</TableCell>
+                    <TableCell align="right">{p.name}</TableCell>
+                    <TableCell align="right">{p.address}</TableCell>
+                    <TableCell align="right">{p.status}</TableCell>
                     <TableCell align="right">{p.vehicleNo}</TableCell>
                   </TableRow>
                 );
